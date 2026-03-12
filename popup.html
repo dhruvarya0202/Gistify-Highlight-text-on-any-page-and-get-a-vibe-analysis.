@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VibeCheck AI</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand-block">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <div class="brand-copy">
+            <p class="micro-label"></p>
+            <h1 class="app-logo">GISTify</h1>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="show-vibe-button" class="icon-button" type="button" aria-label="Show vibe tab">V</button>
+          <button id="show-source-button" class="icon-button" type="button" aria-label="Show source tab">S</button>
+          <button id="refresh-button" class="icon-button" type="button" aria-label="Analyze again">R</button>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Popup sections">
+        <button class="tab-button is-active" type="button" data-tab="vibe">Vibe</button>
+        <button class="tab-button" type="button" data-tab="source">Source</button>
+      </nav>
+
+      <main class="app-content">
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <div>
+              <p class="section-label">Current Signal</p>
+              <p class="hero-value">Selection Relay</p>
+            </div>
+            <div class="status-row">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="status-badge" class="tag-badge tag-badge-neon">Idle</span>
+            </div>
+          </div>
+          <button id="analyze-button" class="primary-button" type="button">Analyze Selection</button>
+        </section>
+
+        <section id="panel-vibe" class="panel-stack" data-panel="vibe">
+          <article class="panel-card panel-card-accent">
+            <p class="panel-label">Vibe Reading</p>
+            <div id="status" class="status-text hidden">
+              <span id="status-message">Analyzing...</span>
+            </div>
+            <p id="vibe-result" class="vibe-result">Waiting for highlighted text.</p>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-head">
+              <p class="panel-label">Prompt Mode</p>
+              <span class="tag-badge tag-badge-neon">GEN-Z</span>
+            </div>
+            <p class="body-copy">Sarcastic, compressed, and tuned for short social-text reads.</p>
+          </article>
+        </section>
+
+        <section id="panel-source" class="panel-stack hidden" data-panel="source">
+          <article class="panel-card panel-card-accent">
+            <div class="panel-head">
+              <p class="panel-label">Selection Buffer</p>
+              <span id="selection-count" class="tag-badge tag-badge-neutral">0 CHARS</span>
+            </div>
+            <pre id="selection-preview" class="selection-preview">No text captured yet.</pre>
+          </article>
+
+          <article class="panel-card">
+            <div class="data-row">
+              <span class="data-label">Status</span>
+              <span id="data-status" class="data-value data-value-highlight">Idle</span>
+            </div>
+            <div class="data-divider"></div>
+            <div class="data-row">
+              <span class="data-label">Action</span>
+              <span class="data-value">Highlight then analyze</span>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+  </html>
