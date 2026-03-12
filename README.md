@@ -1,4 +1,4 @@
-# VibeCheck AI Chrome Extension
+# Gistify Chrome Extension
 
 Minimal Manifest V3 extension that:
 
